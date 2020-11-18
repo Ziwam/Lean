@@ -9,14 +9,14 @@
   "environment": "backtesting", // "live-paper", "backtesting", "live-interactive", "live-interactive-iqfeed"
 
   // algorithm class selector
-  "algorithm-type-name": "BasicTemplateFrameworkAlgorithm",
+  "algorithm-type-name": "BasicTemplateAlgorithm",
 
   // Algorithm language selector - options CSharp, FSharp, VisualBasic, Python, Java
-  "algorithm-language": "CSharp",
+  "algorithm-language": "Python",
 
   //Physical DLL location
-  "algorithm-location": "QuantConnect.Algorithm.CSharp.dll",
-  //"algorithm-location": "../../../Algorithm.Python/BasicTemplateFrameworkAlgorithm.py",
+  //"algorithm-location": "QuantConnect.Algorithm.CSharp.dll",
+  "algorithm-location": "../../../Algorithm.Python/BasicTemplateAlgorithm.py",
   //"algorithm-location": "QuantConnect.Algorithm.FSharp.dll",
   //"algorithm-location": "QuantConnect.Algorithm.VisualBasic.dll",
   //"algorithm-location": "QuantConnect.Algorithm.Java.dll",
@@ -28,7 +28,7 @@
   "data-folder": "../../../Data/",
 
   // debugging configuration - options for debugging-method LocalCmdLine, VisualStudio, PTVSD, PyCharm
-  "debugging": false,
+  "debugging": true,
   "debugging-method": "LocalCmdline",
 
   // handlers
@@ -38,7 +38,7 @@
   "api-handler": "QuantConnect.Api.Api",
   "map-file-provider": "QuantConnect.Data.Auxiliary.LocalDiskMapFileProvider",
   "factor-file-provider": "QuantConnect.Data.Auxiliary.LocalDiskFactorFileProvider",
-  "data-provider": "QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider",
+  "data-provider": "QuantConnect.Lean.Engine.DataFeeds.ApiDataProvider",
   "alpha-handler": "QuantConnect.Lean.Engine.Alphas.DefaultAlphaHandler",
   "data-channel-provider": "DataChannelProvider",
   "object-store": "QuantConnect.Lean.Engine.Storage.LocalObjectStore",
@@ -60,8 +60,8 @@
   "transaction-log": "",
 
   // To get your api access token go to quantconnect.com/account
-  "job-user-id": "0",
-  "api-access-token": "",
+  "job-user-id": "110505",
+  "api-access-token": "8dc443d3fe165eca505eeef880f7fd665a86490b76ff1eb7f9ce9bd1015f84ec",
 
   // live data configuration
   "live-data-url": "ws://www.quantconnect.com/api/v2/live/data/",
@@ -115,7 +115,7 @@
   "bitfinex-api-secret": "",
   "bitfinex-api-key": "",
 
-    // binance configuration
+  // binance configuration
   "binance-api-secret": "",
   "binance-api-key": "",
 

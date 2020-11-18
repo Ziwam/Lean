@@ -11,32 +11,33 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import numpy as np
+from QuantConnect.Algorithm import *
+from QuantConnect import *
+from System import *
 from clr import AddReference
 AddReference("System")
 AddReference("QuantConnect.Algorithm")
 AddReference("QuantConnect.Common")
 
-from System import *
-from QuantConnect import *
-from QuantConnect.Algorithm import *
-import numpy as np
 
-### <summary>
-### Basic template algorithm simply initializes the date range and cash. This is a skeleton
-### framework you can use for designing an algorithm.
-### </summary>
-### <meta name="tag" content="using data" />
-### <meta name="tag" content="using quantconnect" />
-### <meta name="tag" content="trading and orders" />
+# <summary>
+# Basic template algorithm simply initializes the date range and cash. This is a skeleton
+# framework you can use for designing an algorithm.
+# </summary>
+# <meta name="tag" content="using data" />
+# <meta name="tag" content="using quantconnect" />
+# <meta name="tag" content="trading and orders" />
+
 class BasicTemplateAlgorithm(QCAlgorithm):
     '''Basic template algorithm simply initializes the date range and cash'''
 
     def Initialize(self):
         '''Initialise the data and resolution required, as well as the cash and start-end dates for your algorithm. All algorithms must initialized.'''
 
-        self.SetStartDate(2013,10, 7)  #Set Start Date
-        self.SetEndDate(2013,10,11)    #Set End Date
-        self.SetCash(100000)           #Set Strategy Cash
+        self.SetStartDate(2013, 10, 7)  # Set Start Date
+        self.SetEndDate(2013, 10, 11)  # Set End Date
+        self.SetCash(200000)  # Set Strategy Cash
         # Find more symbols here: http://quantconnect.com/data
         self.AddEquity("SPY", Resolution.Minute)
         self.Debug("numpy test >>> print numpy.pi: " + str(np.pi))

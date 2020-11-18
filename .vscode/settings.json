@@ -1,5 +1,9 @@
 {
     "python.autoComplete.extraPaths": [
         "Algorithm.Python/stubs"
-    ]
+    ],
+    "python.pythonPath": "/Users/ziwa/.pyenv/versions/3.6.0/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
 }

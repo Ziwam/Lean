@@ -30,10 +30,11 @@ import datetime
 # no functions
 # classes
 
+
 class AccountType(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     Account type: margin or cash
-    
+
     enum AccountType, values: Cash (1), Margin (0)
     """
     value__: int
@@ -44,7 +45,7 @@ class AccountType(System.Enum, System.IConvertible, System.IFormattable, System.
 class AlgorithmControl(System.object):
     """
     Wrapper for algorithm status enum to include the charting subscription.
-    
+
     AlgorithmControl()
     """
     ChartSubscription: str
@@ -52,10 +53,11 @@ class AlgorithmControl(System.object):
     Initialized: bool
     Status: QuantConnect.AlgorithmStatus
 
+
 class AlgorithmSettings(System.object, QuantConnect.Interfaces.IAlgorithmSettings):
     """
     This class includes user settings for the algorithm which can be changed in the QuantConnect.Interfaces.IAlgorithm.Initialize method
-    
+
     AlgorithmSettings()
     """
     DataSubscriptionLimit: int
@@ -77,11 +79,10 @@ class AlgorithmSettings(System.object, QuantConnect.Interfaces.IAlgorithmSetting
     StalePriceTimeSpan: datetime.timedelta
 
 
-
 class AlgorithmStatus(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     States of a live deployment.
-    
+
     enum AlgorithmStatus, values: Completed (6), Deleted (5), DeployError (0), History (11), Initializing (10), InQueue (1), Invalid (8), Liquidated (4), LoggingIn (9), Running (2), RuntimeError (7), Stopped (3)
     """
     value__: int
@@ -102,10 +103,11 @@ class AlgorithmStatus(System.Enum, System.IConvertible, System.IFormattable, Sys
 class AlphaRuntimeStatistics(System.object):
     """
     Contains insight population run time statistics
-    
+
     AlphaRuntimeStatistics(accountCurrencyProvider: IAccountCurrencyProvider)
     AlphaRuntimeStatistics()
     """
+
     def SetDate(self, now: datetime.datetime) -> None:
         pass
 
@@ -161,11 +163,10 @@ class AlphaRuntimeStatistics(System.object):
     TotalInsightsGenerated: int
 
 
-
 class BrokerageEnvironment(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     Represents the types of environments supported by brokerages for trading
-    
+
     enum BrokerageEnvironment, values: Live (0), Paper (1)
     """
     value__: int
@@ -183,11 +184,12 @@ class ChannelStatus(System.object):
 class Chart(System.object):
     """
     Single Parent Chart Object for Custom Charting
-    
+
     Chart()
     Chart(name: str, type: ChartType)
     Chart(name: str)
     """
+
     def AddSeries(self, series: QuantConnect.Series) -> None:
         pass
 
@@ -219,15 +221,17 @@ class Chart(System.object):
     Name: str
     Series: System.Collections.Generic.Dictionary[str, QuantConnect.Series]
 
+
 class ChartPoint(System.object):
     """
     Single Chart Point Value Type for QCAlgorithm.Plot();
-    
+
     ChartPoint()
     ChartPoint(xValue: Int64, yValue: Decimal)
     ChartPoint(time: DateTime, value: Decimal)
     ChartPoint(point: ChartPoint)
     """
+
     def ToString(self) -> str:
         pass
 
@@ -253,10 +257,11 @@ class ChartPoint(System.object):
     x: int
     y: float
 
+
 class ChartType(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     Type of chart - should we draw the series as overlayed or stacked
-    
+
     enum ChartType, values: Overlay (0), Stacked (1)
     """
     value__: int
@@ -282,7 +287,7 @@ class Currencies(System.object):
 class DataFeedEndpoint(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     Datafeed enum options for selecting the source of the datafeed.
-    
+
     enum DataFeedEndpoint, values: Backtesting (0), Database (3), FileSystem (1), LiveTrading (2)
     """
     value__: int
@@ -295,7 +300,7 @@ class DataFeedEndpoint(System.Enum, System.IConvertible, System.IFormattable, Sy
 class DataNormalizationMode(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     Specifies how data is normalized before being sent into an algorithm
-    
+
     enum DataNormalizationMode, values: Adjusted (1), Raw (0), SplitAdjusted (2), TotalReturn (3)
     """
     value__: int
@@ -325,7 +330,7 @@ class DateFormat(System.object):
 class DelistingType(System.Enum, System.IConvertible, System.IFormattable, System.IComparable):
     """
     Specifies the type of QuantConnect.Data.Market.Delisting data
-    
+
     enum DelistingType, values: Delisted (1), Warning (0)
     """
     value__: int
@@ -336,16 +341,16 @@ class DelistingType(System.Enum, System.IConvertible, System.IFormattable, Syste
 class DownloadFailedEventArgs(System.EventArgs):
     """
     Event arguments for the QuantConnect.Interfaces.IDataProviderEvents.DownloadFailed event
-    
+
     DownloadFailedEventArgs(message: str, stackTrace: str)
     """
+
     def __init__(self, message: str, stackTrace: str) -> QuantConnect.DownloadFailedEventArgs:
         pass
 
     Message: str
 
     StackTrace: str
-
 
 
 class Expiry(System.object):
@@ -431,5 +436,4 @@ class ExtendedDictionary(System.object, QuantConnect.Interfaces.IExtendedDiction
 
     IsReadOnly: bool
 
-
-    Item: indexer#
+    Item: indexer
