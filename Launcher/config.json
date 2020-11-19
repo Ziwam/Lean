@@ -38,7 +38,7 @@
   "api-handler": "QuantConnect.Api.Api",
   "map-file-provider": "QuantConnect.Data.Auxiliary.LocalDiskMapFileProvider",
   "factor-file-provider": "QuantConnect.Data.Auxiliary.LocalDiskFactorFileProvider",
-  "data-provider": "QuantConnect.Lean.Engine.DataFeeds.ApiDataProvider",
+  "data-provider": "QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider",
   "alpha-handler": "QuantConnect.Lean.Engine.Alphas.DefaultAlphaHandler",
   "data-channel-provider": "DataChannelProvider",
   "object-store": "QuantConnect.Lean.Engine.Storage.LocalObjectStore",
@@ -155,7 +155,6 @@
   },
 
   "environments": {
-
     // defines the 'backtesting' environment
     "backtesting": {
       "live-mode": false,
@@ -318,6 +317,5 @@
       "transaction-handler": "QuantConnect.Lean.Engine.TransactionHandlers.BrokerageTransactionHandler",
       "history-provider": "BrokerageHistoryProvider"
     }
-
   }
 }

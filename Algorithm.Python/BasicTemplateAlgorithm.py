@@ -11,14 +11,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import numpy as np
-from QuantConnect.Algorithm import *
-from QuantConnect import *
-from System import *
 from clr import AddReference
 AddReference("System")
-AddReference("QuantConnect.Algorithm")
 AddReference("QuantConnect.Common")
+AddReference("QuantConnect.Algorithm")
+
+from System import *
+from QuantConnect import *
+from QuantConnect.Algorithm import *
 
 
 # <summary>
@@ -40,7 +40,6 @@ class BasicTemplateAlgorithm(QCAlgorithm):
         self.SetCash(200000)  # Set Strategy Cash
         # Find more symbols here: http://quantconnect.com/data
         self.AddEquity("SPY", Resolution.Minute)
-        self.Debug("numpy test >>> print numpy.pi: " + str(np.pi))
 
     def OnData(self, data):
         '''OnData event is the primary entry point for your algorithm. Each new data point will be pumped in here.
